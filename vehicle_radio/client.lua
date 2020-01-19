@@ -6,11 +6,15 @@ local Vehicle = nil
 local Volume = 0.3
 
 local Radios = {
-    { label= "Metal", url= "https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://5.135.154.69:11590/listen.pls?sid=1&t=.pls" },
-    { label= "Reggae", url= "https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://us5.internet-radio.com:8487/listen.pls&t=.pls" },
-    { label= "Dance", url= "https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://pulseedm.cdnstream1.com:8124/1373_128.m3u&t=.pls" },
-    { label= "Jazz", url= "https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://199.180.72.2:8015/listen.pls?sid=1&t=.pls" },
-    { label= "Rap", url= "https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://192.211.51.158:8010/listen.pls?sid=1&t=.pls" },
+    { label= "NRJ", url= "http://185.52.127.163/fr/30001/mp3_128.mp3?origine=fluxradios" },
+    { label= "Fun Radio", url= "http://streaming.radio.funradio.fr:80/fun-1-44-128.mp3" },
+    { label= "RMC", url= "http://chai5she.lb.vip.cdn.dvmr.fr/rmcinfo" },
+    { label= "Radio Autoroute 107.7", url= "http://mediaming.streamakaci.com/sanef107_7_NORD.mp3" },
+    { label= "Skyrock", url= "http://icecast.skyrock.net/s/natio_mp3_128k?tvr_name=tunein16&tvr_section1=128mp3" },
+    { label= "Cherie FM", url= "http://cdn.nrjaudio.fm/audio1/fr/30201/mp3_128.mp3?origine=fluxradios" },
+    { label= "RTL 2", url= "http://streaming.radio.rtl2.fr/rtl2-1-48-192" },
+    { label= "Urban Hits US", url= "http://urbanhitus.ice.infomaniak.ch/urbanhitus-128.mp3" },
+    { label= "Europe 1", url= "http://e1-live-mp3-128.scdn.arkena.com/europe1.mp3" },
 }
 local CurrentRadio = 1
 
@@ -42,6 +46,10 @@ AddEvent("OnKeyPress", function(key)
         if key == "Num 3" then channel = 3 end
         if key == "Num 4" then channel = 4 end
         if key == "Num 5" then channel = 5 end
+        if key == "Num 6" then channel = 6 end
+        if key == "Num 7" then channel = 7 end
+        if key == "Num 8" then channel = 8 end
+        if key == "Num 9" then channel = 9 end
 
         if channel ~= nil then
             CallRemoteEvent("radio:getplayersinvehicle", RadioStatus, nil, channel)
